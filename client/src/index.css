@@ -1,0 +1,21 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+@layer base {
+  .theme-dark {
+    --bg: theme(colors.slate.700);
+    --text: white;
+  }
+  .theme-light {
+    --bg: white;
+    --text: theme(colors.slate.700);
+  }
+}
+@layer components {
+  .btn {
+    @apply p-2 flex justify-center items-center border border-txtPrimary rounded-full hover:bg-txtPrimary hover:text-bgPrimary accent-txtPrimary transition-all;
+  }
+  .loader {
+    @apply border-2 border-txtPrimary border-b-transparent rounded-full animate-spin;
+  }
+}
