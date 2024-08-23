@@ -12,10 +12,10 @@ export default function DateTime({
 }) {
   const [date, setDate] = useState<Date>(new Date());
   const { dateFormat, timeFormat } = useMemo(() => {
-    const hh = Math.floor(timezone / 3600)
+    const hh = Math.floor(Math.abs(timezone) / 3600)
       .toString()
       .padStart(2, "0");
-    const mm = Math.floor((timezone / 60) % 60)
+    const mm = Math.floor((Math.abs(timezone) / 60) % 60)
       .toString()
       .padStart(2, "0");
 
