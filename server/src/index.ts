@@ -2,10 +2,16 @@ import dotenv from "dotenv";
 dotenv.config();
 import express, { Application } from "express";
 import path from "path";
+import cors from "cors";
 
 const app: Application = express();
 const port = process.env.PORT || 5000;
 
+app.use(
+  cors({
+    origin: process.env.CLIENT_URL,
+  })
+);
 app.use(express.static(path.resolve(__dirname, "../../client/dist")));
 if (process.env.DEV)
   app.use((req, res, next) => {

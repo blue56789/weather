@@ -11,7 +11,9 @@ export default function useLocation() {
     navigator.geolocation.getCurrentPosition(
       async (position) => {
         const response = await fetch(
-          `/api/loc?lat=${position.coords.latitude}&lon=${position.coords.longitude}`
+          `${import.meta.env.VITE_SERVER_URL}/api/loc?lat=${
+            position.coords.latitude
+          }&lon=${position.coords.longitude}`
         );
         const json = await response.json();
         if (response.ok)

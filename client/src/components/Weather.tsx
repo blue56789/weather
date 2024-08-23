@@ -51,7 +51,9 @@ export default function Weather({
     queryKey: ["weather"],
     queryFn: async () => {
       const response = await fetch(
-        `/api/weather?lat=${location.lat}&lon=${location.lon}`
+        `${import.meta.env.VITE_SERVER_URL}/api/weather?lat=${
+          location.lat
+        }&lon=${location.lon}`
       );
       const json = await response.json();
       return json;

@@ -13,7 +13,9 @@ export default function LocationInput({
     queryKey: ["location"],
     queryFn: async () => {
       if (!input) return [];
-      const response = await fetch(`/api/coords?q=${input}`);
+      const response = await fetch(
+        `${import.meta.env.VITE_SERVER_URL}/api/coords?q=${input}`
+      );
       const json = await response.json();
       return json;
     },
