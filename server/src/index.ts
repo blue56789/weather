@@ -9,7 +9,7 @@ const port = process.env.PORT || 5000;
 
 app.use(
   cors({
-    origin: process.env.CLIENT_URL,
+    origin: "*",
   })
 );
 app.use(express.static(path.resolve(__dirname, "../../client/dist")));
