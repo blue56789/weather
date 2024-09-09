@@ -1,19 +1,31 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap");
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 @layer base {
+  :root {
+    font-family: "inter";
+  }
   .theme-dark {
-    --bg: theme(colors.slate.700);
-    --text: white;
+    --bg: #283048;
+    --bg2: #384364;
+    --shadow: rgba(0, 0, 0, 0.75);
+    --text: #fffff7;
+    --border: #fcfff740;
+    --drop-shadow: 4px 4px 2px var(--shadow);
   }
   .theme-light {
-    --bg: white;
-    --text: theme(colors.slate.700);
+    --bg: #fcfff7;
+    --bg2: #ecefe7;
+    --shadow: rgba(0, 0, 0, 0.25);
+    --text: #1e3888;
+    --border: #1e388840;
+    --drop-shadow: 4px 4px 2px var(--shadow);
   }
 }
 @layer components {
   .btn {
-    @apply p-2 flex justify-center items-center border border-txtPrimary rounded-full hover:bg-txtPrimary hover:text-bgPrimary accent-txtPrimary transition-all;
+    @apply p-2 flex justify-center items-center shadow-sm shadow-shadow rounded-full hover:bg-txtPrimary hover:text-bgPrimary accent-txtPrimary transition-all;
   }
   .loader {
     @apply border-2 border-txtPrimary border-b-transparent rounded-full animate-spin;

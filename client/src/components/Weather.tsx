@@ -80,7 +80,7 @@ export default function Weather({
         <div className="flex flex-col gap-8 items-center">
           <div className="capitalize flex flex-col gap-2 items-center">
             <FontAwesomeIcon
-              className=" size-32"
+              className="size-32 drop-shadow-custom"
               icon={icons.get(data.weather[0].icon) || faSun}
             />
             {data.weather[0].description}

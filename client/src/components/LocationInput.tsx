@@ -33,7 +33,7 @@ export default function LocationInput({
     <div className="relative">
       <input
         type="text"
-        className="border border-txtPrimary rounded-full bg-bgPrimary w-full px-4 py-2 accent-txtPrimary"
+        className="shadow-inner shadow-shadow rounded-full bg-bgSecondary w-full px-4 py-2 outline-none"
         placeholder="Enter location"
         value={input}
         onChange={(e) => setInput(e.target.value)}
@@ -41,7 +41,7 @@ export default function LocationInput({
       <div
         className={`${
           !input && "hidden"
-        } absolute left-0 -bottom-4 translate-y-full w-full h-36 border border-txtPrimary rounded-lg bg-bgPrimary flex flex-col overflow-scroll`}
+        } absolute left-0 -bottom-4 translate-y-full w-full h-36 shadow-md shadow-shadow border border-border rounded-lg bg-bgPrimary flex flex-col items-center overflow-scroll`}
       >
         {isFetching && <div className="p-2">Loading...</div>}
         {!isFetching &&
@@ -49,7 +49,7 @@ export default function LocationInput({
           data.map((e: Location, i: number) => (
             <button
               key={i}
-              className="w-full rounded-none border-0 border-b btn"
+              className="w-full rounded-none btn border-b border-border shadow-none btn"
               onClick={() => {
                 setLocation({ ...e });
                 setInput("");

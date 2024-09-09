@@ -16,8 +16,13 @@ const dotenv_1 = __importDefault(require("dotenv"));
 dotenv_1.default.config();
 const express_1 = __importDefault(require("express"));
 const path_1 = __importDefault(require("path"));
+const cors_1 = __importDefault(require("cors"));
 const app = (0, express_1.default)();
 const port = process.env.PORT || 5000;
+app.use((0, cors_1.default)({
+    origin: process.env.CLIENT_URL,
+    credentials: true,
+}));
 app.use(express_1.default.static(path_1.default.resolve(__dirname, "../../client/dist")));
 if (process.env.DEV)
     app.use((req, res, next) => {

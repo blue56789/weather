@@ -8,7 +8,13 @@ export default {
     extend: {
       colors: {
         bgPrimary: 'var(--bg)',
-        txtPrimary: 'var(--text)'
+        bgSecondary: 'var(--bg2)',
+        shadow: 'var(--shadow)',
+        txtPrimary: 'var(--text)',
+        border: 'var(--border)'
+      },
+      dropShadow: {
+        custom: 'var(--drop-shadow)'
       }
     },
   },
