@@ -76,17 +76,21 @@ export default function Weather({
   return (
     <div className="p-8 flex flex-col gap-8">
       <DateTime location={location} timezone={data.timezone} />
-      <div className="flex flex-col sm:flex-row justify-center items-center gap-8">
+      <div className="flex flex-col sm:flex-row justify-center items-center gap-8 sm:gap-12">
         <div className="flex flex-col gap-8 items-center">
-          <div className="capitalize flex flex-col gap-2 items-center">
+          <div className="flex justify-center items-center size-60 sm:size-auto shadow-inset sm:shadow-none bg-bgSecondary sm:bg-transparent rounded-[32px]">
             <FontAwesomeIcon
-              className="size-32 drop-shadow-custom"
+              className="size-32 drop-shadow-custom "
               icon={icons.get(data.weather[0].icon) || faSun}
             />
-            {data.weather[0].description}
           </div>
-          <div className="text-6xl">
-            {Math.round(kelvinToOther(data.main.temp, unit))}°
+          <div className="flex justify-center items-center gap-4">
+            <span className="text-6xl font-semibold">
+              {Math.round(kelvinToOther(data.main.temp, unit))}°{" "}
+            </span>
+            <span className="uppercase font-light text-3xl">
+              {data.weather[0].description}
+            </span>
           </div>
         </div>
         <div className="flex flex-col gap-8 items-center">

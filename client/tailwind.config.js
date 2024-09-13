@@ -15,6 +15,9 @@ export default {
       },
       dropShadow: {
         custom: 'var(--drop-shadow)'
+      },
+      boxShadow: {
+        inset: 'inset 4px 4px 4px var(--shadow)'
       }
     },
   },

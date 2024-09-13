@@ -33,7 +33,7 @@ export default function LocationInput({
     <div className="relative">
       <input
         type="text"
-        className="shadow-inner shadow-shadow rounded-full bg-bgSecondary w-full px-4 py-2 outline-none"
+        className="shadow-inset rounded-full bg-bgSecondary w-full px-4 py-2 outline-none"
         placeholder="Enter location"
         value={input}
         onChange={(e) => setInput(e.target.value)}

@@ -4,28 +4,28 @@
 @tailwind utilities;
 @layer base {
   :root {
-    font-family: "inter";
+    font-family: "Inter";
+    --drop-shadow: 4px 4px 2px var(--shadow);
+    --inset-shadow: inset 4px 4px 4px var(--shadow);
   }
   .theme-dark {
     --bg: #283048;
     --bg2: #384364;
     --shadow: rgba(0, 0, 0, 0.75);
-    --text: #fffff7;
+    --text: #fcfff7;
     --border: #fcfff740;
-    --drop-shadow: 4px 4px 2px var(--shadow);
   }
   .theme-light {
     --bg: #fcfff7;
-    --bg2: #ecefe7;
+    --bg2: #d9d9d9;
     --shadow: rgba(0, 0, 0, 0.25);
     --text: #1e3888;
     --border: #1e388840;
-    --drop-shadow: 4px 4px 2px var(--shadow);
   }
 }
 @layer components {
   .btn {
-    @apply p-2 flex justify-center items-center shadow-sm shadow-shadow rounded-full hover:bg-txtPrimary hover:text-bgPrimary accent-txtPrimary transition-all;
+    @apply p-2 flex bg-bgSecondary justify-center items-center shadow-[4px_4px_4px] shadow-shadow rounded-full hover:bg-txtPrimary hover:text-bgPrimary accent-txtPrimary transition-all;
   }
   .loader {
     @apply border-2 border-txtPrimary border-b-transparent rounded-full animate-spin;

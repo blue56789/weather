@@ -38,11 +38,12 @@ export default function DateTime({
   return (
     <div className="flex flex-col items-center gap-2">
       <div>
-        <FontAwesomeIcon icon={faLocationDot} /> {location.name},{" "}
-        {location.state && `${location.state},`} {location.country}
+        <FontAwesomeIcon className="mr-2" icon={faLocationDot} />
+        {location.name}, {location.state && `${location.state},`}{" "}
+        {location.country}
       </div>
       <div>{dateFormat.format(date)}</div>
-      <div className="text-xl">{timeFormat.format(date)}</div>
+      <div className="text-2xl">{timeFormat.format(date)}</div>
     </div>
   );
 }
